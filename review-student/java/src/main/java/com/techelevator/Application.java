@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import javax.print.attribute.standard.MediaSize;
+import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,9 +9,6 @@ public class Application {
 
     List<Department> departments = new ArrayList<>();
 
-    Department marketing = new Department(1, "marketing");
-    Department sales = new Department(2, "sales");
-    Department engineering = new Department(3, "engineering");
     /**
      * The main entry point in the application
      * @param args
@@ -23,6 +22,7 @@ public class Application {
 
         // create some departments
         createDepartments();
+
 
         // print each department by name
         printDepartments();
@@ -48,6 +48,12 @@ public class Application {
      * Create departments and add them to the collection of departments
      */
     private void createDepartments() {
+    Department marketing = new Department(1,"Marketing");
+    departments.add(marketing);
+    Department sales = new Department(2,"Sales");
+    departments.add(sales);
+    Department engineering = new Department(3,"Engineering");
+    departments.add(engineering);
 
     }
 
@@ -56,7 +62,10 @@ public class Application {
      */
     private void printDepartments() {
         System.out.println("------------- DEPARTMENTS ------------------------------");
-
+    for (Department dp : departments){
+    dp.getNam();
+    System.out.println(dp.getNam());
+    }
     }
 
     /**
