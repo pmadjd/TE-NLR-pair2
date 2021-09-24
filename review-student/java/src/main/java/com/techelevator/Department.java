@@ -13,7 +13,13 @@ public class Department {
     public int getDepartmentId(){
         return departmentId;
     }
-    public String getNam(){
-        return name;
+    public String getName(){ return name; }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

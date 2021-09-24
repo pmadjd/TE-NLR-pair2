@@ -8,6 +8,9 @@ import java.util.List;
 public class Application {
 
     List<Department> departments = new ArrayList<>();
+    List<Employee> employees = new ArrayList<>();
+    Department department1, department2,department3;
+
 
     /**
      * The main entry point in the application
@@ -48,12 +51,12 @@ public class Application {
      * Create departments and add them to the collection of departments
      */
     private void createDepartments() {
-    Department marketing = new Department(1,"Marketing");
-    departments.add(marketing);
-    Department sales = new Department(2,"Sales");
-    departments.add(sales);
-    Department engineering = new Department(3,"Engineering");
-    departments.add(engineering);
+    department1 = new Department(1,"Marketing");
+    departments.add(department1);
+    department2 = new Department(2,"Sales");
+    departments.add(department2);
+    department3 = new Department(3,"Engineering");
+    departments.add(department3);
 
     }
 
@@ -63,8 +66,8 @@ public class Application {
     private void printDepartments() {
         System.out.println("------------- DEPARTMENTS ------------------------------");
     for (Department dp : departments){
-    dp.getNam();
-    System.out.println(dp.getNam());
+    dp.getName();
+    System.out.println(dp.getName());
     }
     }
 
@@ -72,6 +75,12 @@ public class Application {
      * Create employees and add them to the collection of employees
      */
     private void createEmployees() {
+        Employee employee1 = new Employee(1, "Dane", "Johnson", "djohnson@teams.com", department3, "08/21/2020" );
+        employees.add(employee1);
+        Employee employee2 = new Employee(2, "Angie", "Smith", "asmith@teams.com", department2, "08/21/2020" );
+        employees.add(employee2);
+        Employee employee3 = new Employee(3, "Margaret", "Thompson", "mthomson@teams.com", department1, "08/21/2020" );
+        employees.add(employee3);
 
     }
 
@@ -80,7 +89,9 @@ public class Application {
      */
     private void printEmployees() {
         System.out.println("\n------------- EMPLOYEES ------------------------------");
-
+for (Employee emp : employees){
+    System.out.println(emp.getFullName(emp.getFirstName(), emp.getLastName())+" " +Employee.STARTING_SALARY +" "+ emp.getDepartment());
+}
     }
 
     /**
