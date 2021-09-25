@@ -2,14 +2,13 @@ package com.techelevator;
 
 import javax.print.attribute.standard.MediaSize;
 import javax.xml.namespace.QName;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Application {
 
     List<Department> departments = new ArrayList<>();
     List<Employee> employees = new ArrayList<>();
-
+    Map<String, Project> projects = new HashMap<>();
 
     /**
      * The main entry point in the application
@@ -103,13 +102,31 @@ public class Application {
      * Create the 'TEams' project.
      */
     private void createTeamsProject() {
+    Project teams = new Project("TEams", "Project Management Software","10/10/2020","11/10/2020");
+    List<Employee> engineeringEmployees = new ArrayList<>();
+    for (int i=0; i< employees.size(); i++){
+        if(employees.get(i).getDepartment().getDepartmentId()==3){
+            engineeringEmployees.add(employees.get(i));
+        }
+    }
 
+    teams.setTeamMembers(engineeringEmployees);
+    projects.put("TEams",teams);
     }
 
     /**
      * Create the 'Marketing Landing Page' project.
      */
     private void createLandingPageProject() {
+        Project landing = new Project("Marketing Landing Page","Lead Capture Landing Pge for Marketing","10/10/2020","10/17/2020");
+        List<Employee> marketingEmployees= new ArrayList<>();
+        for(int i=0; i< employees.size();i++){
+           if( employees.get(i).getDepartment().getDepartmentId()==1){
+               marketingEmployees.add(employees.get(i));
+           }
+        }
+        landing.setTeamMembers(marketingEmployees);
+        projects.put("Marketing Landing Page", landing);
 
     }
 
@@ -118,7 +135,9 @@ public class Application {
      */
     private void printProjectsReport() {
         System.out.println("\n------------- PROJECTS ------------------------------");
-
+   for(Map.Entry<String, Project> pj: projects.entrySet()){
+       System.out.println(pj.getKey()+": "+pj.getValue().getTeamMembers().size());
+   }
     }
 
 }
