@@ -103,7 +103,7 @@ public class Application {
      */
     private void createTeamsProject() {
     Project teams = new Project("TEams", "Project Management Software","10/10/2020","11/10/2020");
-    List<Employee> engineeringEmployees = new ArrayList<>();
+    List<Employee> engineeringEmployees = new ArrayList<Employee>();
     for (int i=0; i< employees.size(); i++){
         if(employees.get(i).getDepartment().getDepartmentId()==3){
             engineeringEmployees.add(employees.get(i));
@@ -119,7 +119,7 @@ public class Application {
      */
     private void createLandingPageProject() {
         Project landing = new Project("Marketing Landing Page","Lead Capture Landing Pge for Marketing","10/10/2020","10/17/2020");
-        List<Employee> marketingEmployees= new ArrayList<>();
+        List<Employee> marketingEmployees= new ArrayList<Employee>();
         for(int i=0; i< employees.size();i++){
            if( employees.get(i).getDepartment().getDepartmentId()==1){
                marketingEmployees.add(employees.get(i));
@@ -135,9 +135,9 @@ public class Application {
      */
     private void printProjectsReport() {
         System.out.println("\n------------- PROJECTS ------------------------------");
-   for(Map.Entry<String, Project> pj: projects.entrySet()){
-       System.out.println(pj.getKey()+": "+pj.getValue().getTeamMembers().size());
-   }
+        for(Map.Entry<String, Project> pj : projects.entrySet()){
+            System.out.println(pj.getKey() + ": " + pj.getValue().getTeamMembers().size());
+        }
     }
 
 }

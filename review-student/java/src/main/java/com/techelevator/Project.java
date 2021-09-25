@@ -11,9 +11,9 @@ public class Project {
     private String dueDate;
     private List<Employee> teamMembers;
 
-    List<Employee> emptyList = new ArrayList<>();
+
     public void setTeamMembers(List<Employee> teamMembers){
-        this.teamMembers = emptyList;
+        this.teamMembers = teamMembers;
     }
 
     public Project(String name, String description, String startDate, String dueDate){
