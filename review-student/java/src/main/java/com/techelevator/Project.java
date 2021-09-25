@@ -12,7 +12,7 @@ public class Project {
     private List<Employee> teamMembers;
 
     List<Employee> emptyList = new ArrayList<>();
-    public void setTeamMembers(){
+    public void setTeamMembers(List<Employee> teamMembers){
         this.teamMembers = emptyList;
     }
 
@@ -35,5 +35,6 @@ public class Project {
     public String getDueDate(){
         return dueDate;
     }
+    public List<Employee> getTeamMembers(){return teamMembers;}
 
 }
