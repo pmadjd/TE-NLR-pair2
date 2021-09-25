@@ -9,6 +9,7 @@ public class Employee {
     private double salary;
     private Department department;
     private String hireDate;
+    private String fullName;
 
     public final static double STARTING_SALARY = 60000;
 
@@ -49,8 +50,8 @@ public class Employee {
 
     }
 
-    public String getFullName(String lastName, String firstName){
-        String fullName = lastName + ", " + firstName;
+    public String getFullName(){
+        this.fullName = lastName + ", " + firstName;
         return fullName;
     }
     public double raiseSalary(double percent, double salary){

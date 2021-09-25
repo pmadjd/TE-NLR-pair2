@@ -91,10 +91,10 @@ public class Application {
         System.out.println("\n------------- EMPLOYEES ------------------------------");
         for (Employee emp : employees) {
             if (emp.getFirstName().equals("Angie"))
-                System.out.println(emp.getFullName(emp.getFirstName(), emp.getLastName()) + " " + Employee.STARTING_SALARY * 1.1 + " " + emp.getDepartment().getName());
+                System.out.println(emp.getFullName() + " " + Employee.STARTING_SALARY * 1.1 + " " + emp.getDepartment().getName());
 
             else
-                System.out.println(emp.getFullName(emp.getFirstName(), emp.getLastName()) + " " + Employee.STARTING_SALARY + " " + emp.getDepartment().getName());
+                System.out.println(emp.getFullName() + " " + Employee.STARTING_SALARY + " " + emp.getDepartment().getName());
 
         }
     }
